@@ -1,0 +1,10 @@
+<form class="form" ng-submit="submitAnswers(selectedChoice)">
+<div class="form-group">
+  <div class="radio" ng-repeat="list in choiceList track by $index">Question {{$index + 1}} - {{list.question}}<br/>
+    <label ng-repeat="alist in list.answerList">
+      <input type="radio" name="multipleChoice{{list.index}}" ng-model="selectedChoice[list.index]" value="{{alist.id}}" >{{alist.answer}} 
+    </label> <!-- <div>currently selected: {{selectedChoice}}</div> -->
+    </div>
+  </div>
+  <div> <button type="submit">Submit</button> </div>
+</form>
